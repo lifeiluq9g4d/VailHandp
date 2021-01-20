@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Driver;
+import Model.Aplikasi;
+import ViewConsole.Console;
 
 /**
  *
@@ -12,10 +14,14 @@ package Driver;
 public class Driver {
 
     /**
+     * 
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Aplikasi app = new Aplikasi();
+        
+        Console view = new Console(app);
+        view.mainMenu();
     }
-    
 }

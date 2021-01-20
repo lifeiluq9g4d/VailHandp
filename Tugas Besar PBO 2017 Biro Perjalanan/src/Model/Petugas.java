@@ -45,7 +45,7 @@ public class Petugas extends Orang{
 
     @Override
     public String toString() {
-        return  "idPetugas    : "  + idPetugas + "\n" +
+        return  "idPetugas    : " + idPetugas + "\n" +
                 "nama         : " + getNama() + "\n" + 
                 "gaji         : " + gaji + "\n" +
                 "jabatan      : " + jabatan + "\n" +
