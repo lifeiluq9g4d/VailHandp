@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package Model;
+import Database.FileDatabase;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +25,7 @@ public class Aplikasi {
     private ArrayList<Perjalanan> daftarPerjalanan;
     private ArrayList<PaketWisata> daftarPaketWisata;
     private ArrayList<TempatWisata> daftarTempatWisata;
+    private FileDatabase save;
     
     // Method fungsi utama
     public Aplikasi(){
@@ -28,6 +34,7 @@ public class Aplikasi {
         daftarPerjalanan = new ArrayList();
         daftarPaketWisata = new ArrayList();
         daftarTempatWisata = new ArrayList();
+        save = new FileDatabase();
     }
     
     // Method Petugas --------------------
@@ -281,5 +288,127 @@ public class Aplikasi {
         List idP = daftarPerjalanan.stream()
                 .map(e -> e.toStringAll()).collect(Collectors.toList());
         return (String[]) idP.stream().toArray(size -> new String[size]);
+    }
+    
+    // Save File
+    
+    // Database Pelanggan
+    public void loadPelanggan() throws FileNotFoundException, IOException {
+        try {
+            daftarPelanggan = (ArrayList<Pelanggan>) save.getObject("FilePelanggan.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePelanggan.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPelanggan = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+
+    public void savePelanggan() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPelanggan, "FilePelanggan.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+    // Database Petugas    
+    public void loadPetugas() throws FileNotFoundException, IOException {
+        try {
+            daftarPetugas = (ArrayList<Petugas>) save.getObject("FilePetugas.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePetugas.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPetugas = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+
+    public void savePetugas() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPetugas, "FilePetugas.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+    // Database Tempat Wisata
+    public void loadTempatWisata() throws FileNotFoundException, IOException {
+        try {
+            daftarTempatWisata = (ArrayList<TempatWisata>) save.getObject("FileTempatWisata.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FileTempatWisata.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarTempatWisata = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+
+    public void saveTempatWisata() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarTempatWisata, "FileTempatWisata.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+    // Database Paket Wisata
+    public void loadPaketWisata() throws FileNotFoundException, IOException {
+        try {
+            daftarPaketWisata = (ArrayList<PaketWisata>) save.getObject("FilePaketWisata.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePaketWisata.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPaketWisata = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+
+    public void savePaketWisata() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPaketWisata, "FilePaketWisata.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+    // Database Perjalanan
+    public void loadPerjalanan() throws FileNotFoundException, IOException {
+        try {
+            daftarPerjalanan = (ArrayList<Perjalanan>) save.getObject("FilePerjalanan.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePerjalanan.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPerjalanan = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+
+    public void savePerjalanan() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPerjalanan, "FilePerjalanan.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
     }
 }

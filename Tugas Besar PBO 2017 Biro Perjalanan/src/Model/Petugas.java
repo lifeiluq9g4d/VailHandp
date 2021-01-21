@@ -5,11 +5,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jeremi 
  */
-public class Petugas extends Orang{
+public class Petugas extends Orang implements Serializable{
     private static int countE = 1;
     
     private final String idPetugas;

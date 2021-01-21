@@ -5,11 +5,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ressa Fatah
  */
-public class TempatWisata {
+public class TempatWisata implements Serializable{
     private static int countTW = 1;
     
     private final String idTempatWisata;

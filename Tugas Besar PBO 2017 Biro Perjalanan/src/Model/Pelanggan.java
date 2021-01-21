@@ -5,11 +5,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jeremi
  */
-public class Pelanggan extends Orang{
+public class Pelanggan extends Orang implements Serializable{
     private static int countM = 1;
     
     private final String idPelanggan;

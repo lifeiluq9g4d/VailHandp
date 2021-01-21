@@ -416,19 +416,29 @@ public class Console {
                 pil = inputInteger();
                 switch (pil){
                     case 1:
+                        model.loadPelanggan();
                         menuPelanggan();
+                        model.savePelanggan();
                         break;
                     case 2:
+                        model.loadPetugas();
                         menuPetugas();
+                        model.savePetugas();
                         break;
                     case 3:
+                        model.loadTempatWisata();
                         menuTempatWisata();
+                        model.saveTempatWisata();
                         break;
                     case 4:
+                        model.loadPaketWisata();
                         menuPaketWisata();
+                        model.savePaketWisata();
                         break;
                     case 5:
+                        model.loadPerjalanan();
                         menuPerjalanan();
+                        model.savePerjalanan();
                         break;
                     case 0:
                         System.out.println("Terimakasih");

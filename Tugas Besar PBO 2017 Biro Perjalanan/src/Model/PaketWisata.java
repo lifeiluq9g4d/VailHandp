@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
  *
  * @author Ressa Fatah
  */
-public class PaketWisata {
+public class PaketWisata implements Serializable{
     private static int countPW = 1;
     
     private final String idPaket;

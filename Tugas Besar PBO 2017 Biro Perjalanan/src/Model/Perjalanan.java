@@ -5,13 +5,14 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Kukuh Rahingga P
  */
-public class Perjalanan {
+public class Perjalanan implements Serializable{
     private static int countP = 1;
     
     private final String idPerjalanan;
