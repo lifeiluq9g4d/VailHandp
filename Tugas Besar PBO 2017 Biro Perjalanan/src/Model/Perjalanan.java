@@ -26,6 +26,7 @@ public class Perjalanan implements Serializable{
         idPerjalanan = "P-" + (countP++);
         this.tanggal = tanggal;
         this.paket = paket;
+        this.slotPelanggan = paket.getMaxPelanggan();
         listPelanggan = new ArrayList();
     }
     

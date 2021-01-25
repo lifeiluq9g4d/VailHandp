@@ -9,7 +9,6 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +16,8 @@ import java.util.stream.Collectors;
 
 /**
  *
- * @author Kukuh Rahingga P
+ * Nama     : Jeremiah Hasudungan
+ * NIM      : 1301154287 
  */
 public class Aplikasi {
     private ArrayList<Petugas> daftarPetugas;
@@ -89,6 +89,7 @@ public class Aplikasi {
     public void createTempatWisata (String namaWisata, String lokasiWisata){
         daftarTempatWisata.add(new TempatWisata(namaWisata, lokasiWisata));
     }
+    
     
     public TempatWisata getTempatWisata (String id){
         return daftarTempatWisata.stream()
@@ -255,7 +256,9 @@ public class Aplikasi {
     }
     
     
-    // Tambahan 
+    //Tambahan 
+    
+    // View All Array
     public void viewListConsole(String[] list) {
         Arrays.stream(list).forEach(System.out::println);
     }
@@ -290,7 +293,47 @@ public class Aplikasi {
         return (String[]) idP.stream().toArray(size -> new String[size]);
     }
     
-    // Save File
+    // View List Id
+    public String viewIdPelanggan() {
+        String s = "";
+        for (Pelanggan m : daftarPelanggan) {
+            s += m.getIdPelanggan()+ "\n";
+        }
+        return s;
+    }
+    
+    public String viewIdPetugas() {
+        String s = "";
+        for (Petugas m : daftarPetugas) {
+            s += m.getIdPetugas()+ "\n";
+        }
+        return s;
+    }
+    
+    public String viewIdTempatWisata() {
+        String s = "";
+        for (TempatWisata m : daftarTempatWisata) {
+            s += m.getIdTempatWisata()+ "\n";
+        }
+        return s;
+    }
+    
+    public String viewIdPaketWisata() {
+        String s = "";
+        for (PaketWisata m : daftarPaketWisata) {
+            s += m.getIdPaket()+ "\n";
+        }
+        return s;
+    }
+    
+    public String viewIdPerjalanan() {
+        String s = "";
+        for (Perjalanan m : daftarPerjalanan) {
+            s += m.getIdPerjalanan()+ "\n";
+        }
+        return s;
+    }
+    
     
     // Database Pelanggan
     public void loadPelanggan() throws FileNotFoundException, IOException {

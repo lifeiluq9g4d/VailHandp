@@ -345,7 +345,7 @@ public class Console {
                         model.assignTempatWisata(idpaket, idtempat);
                         break;
                     case 2:
-                        System.out.println("--- Tambah Tempat Wisata ---");
+                        System.out.println("--- Kurangi Tempat Wisata ---");
                         System.out.print(" - ID Paket wisata    : "); idpaket = cinStr.nextLine();
                         System.out.print(" - ID Tempat wisata   : "); idtempat = cinStr.nextLine();
                         model.unassignTempatWisata(idpaket, idtempat);
@@ -382,7 +382,7 @@ public class Console {
                         model.assignPelanggan(idperjalanan, idpelanggan);
                         break;
                     case 2:
-                        System.out.println("--- Tambah Pelanggan ---");
+                        System.out.println("--- Kurangi Pelanggan ---");
                         System.out.print(" - ID Perjalanan    : "); idperjalanan = cinStr.nextLine();
                         System.out.print(" - ID Pelanggan     : "); idpelanggan = cinStr.nextLine();
                         model.assignPelanggan(idperjalanan, idpelanggan);

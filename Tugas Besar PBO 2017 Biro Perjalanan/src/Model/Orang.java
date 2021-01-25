@@ -28,7 +28,7 @@ public abstract class Orang implements Serializable{
     }
     
     public String getNama() {
-        return "Mr. " + nama;
+        return nama;
     }
 
     public void setNama(String nama) {

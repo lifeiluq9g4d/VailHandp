@@ -15,7 +15,8 @@ import java.io.ObjectOutputStream;
 
 /**
  *
- * @author Kukuh Rahingga P
+ * Na   : Ressa Firmansyah 
+ * NIM  : 1301154105
  */
 public class FileDatabase {
     public void saveObject(Object o, String file)
